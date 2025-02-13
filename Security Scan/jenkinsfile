@@ -1,0 +1,100 @@
+pipeline{
+    agent any
+
+    tools{
+        jdk 'jdk-17'
+        nodejs 'nodejs-16'
+    }
+
+    environment {
+        SCANNER_HOME=tool 'sonar-scanner'
+        TMDB_V3_API_KEY = credentials('tmdb_apikey')
+        DATADOG_API_KEY = credentials('datadog_apikey')
+    }
+
+    stages {
+        stage('clean workspace'){
+            steps{
+                cleanWs()
+            }
+        }
+
+        stage('Checkout from Git'){
+            agent {label 'master'}
+            steps{
+                git branch: 'main', url: 'https://github.com/N4si/DevSecOps-Project.git'
+            }
+        }
+
+        stage("Sonarqube Analysis "){
+            agent {label 'master'}
+            steps{
+                withSonarQubeEnv('sonar-server') {
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Netflix \
+                    -Dsonar.projectKey=Netflix '''
+                }
+            }
+        }
+
+        stage("quality gate"){
+           agent {label 'master'}
+           steps {
+                script {
+                    waitForQualityGate abortPipeline: false, credentialsId: 'sonarqube_token' 
+                }
+            } 
+        }
+
+        stage('Install Dependencies') {
+            agent {label 'master'}
+            steps {
+                sh "npm install"
+            }
+        }
+
+        stage('OWASP FS SCAN') {
+            agent {label 'master'}
+            steps {
+                dependencyCheck additionalArguments: '--scan ./ --disableYarnAudit --disableNodeAudit', odcInstallation: 'dp-check'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
+
+        stage('TRIVY FS SCAN') {
+            agent {label 'slave1'}
+            steps {
+                sh "trivy fs . > trivyfs.txt"
+            }
+        }
+
+        stage("Docker Build & Push"){
+            agent {label 'master'}
+            steps{
+                script{
+                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                        sh "docker system prune -af" 
+                        sh "docker build --no-cache --build-arg TMDB_V3_API_KEY=${TMDB_V3_API_KEY} -t netflix ."  
+                        sh "docker tag netflix danny2810/netflix:latest"  
+                        sh "docker push danny2810/netflix:latest" 
+                    }
+                }
+            }
+        }
+
+        stage("TRIVY"){
+            agent {label 'slave1'}
+            steps{
+                sh "trivy image danny2810/netflix:latest > trivyimage.txt" 
+            }
+        }
+
+        stage('Deploy to container') {
+            agent { label 'master' }
+            steps {
+                sh 'sudo docker run -d --name netflix -p 8081:80 danny2810/netflix:latest'
+            }
+        }
+
+    }
+}
+

@@ -1,0 +1,31 @@
+# Ignore Terraform state files and backup
+AWS Infra/*.tfstate
+AWS Infra/*.tfstate.backup
+AWS Infra/.terraform/
+AWS Infra/.terraform.lock.hcl
+
+# Ignore variable files that may contain sensitive data
+AWS Infra/*.tfvars
+AWS Infra/*.tfvars.json
+
+# Ignore crash logs and debugging files
+AWS Infra/crash.log
+AWS Infra/.terraformrc
+AWS Infra/terraform.tfstate.d/
+
+# Ignore output logs
+AWS Infra/*.log
+
+# Ignore Terraform provider cache
+AWS Infra/.terraform.lock.hcl
+AWS Infra/.terraform/providers/
+
+# Ignore temporary files
+AWS Infra/*.backup
+AWS Infra/*.bak
+AWS Infra/*~
+
+# Ignore IDE/editor specific files
+.vscode/
+.idea/
+.DS_Store
