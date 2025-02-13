@@ -22,7 +22,7 @@ Configure Prometheus to scrape metrics from Jenkins Node Exporter, which is expo
 
 ## SCREENSHOTS
 
-![AWS EC2 Instances](https://drive.google.com/file/d/1Z_xw2XUcCh-9kgAbKIsZBh8H2eO-ik7N/view?usp=sharing)
+![AWS EC2 Instances]([https://drive.google.com/file/d/1Z_xw2XUcCh-9kgAbKIsZBh8H2eO-ik7N/view?usp=sharing](https://drive.google.com/file/d/13-rI39tZdmavVGcwu_XE7TxL5TAlbe1-/view?usp=drive_link))
 
 ![Pipeline](https://drive.google.com/file/d/18RNkiu7-j6KMEbYpqazzEeLCJ4Kx8H2A/view?usp=sharing)
 
