@@ -22,23 +22,23 @@ Configure Prometheus to scrape metrics from Jenkins Node Exporter, which is expo
 
 ## SCREENSHOTS
 
-![AWS EC2 Instances]([https://drive.google.com/file/d/1Z_xw2XUcCh-9kgAbKIsZBh8H2eO-ik7N/view?usp=sharing](https://drive.google.com/file/d/13-rI39tZdmavVGcwu_XE7TxL5TAlbe1-/view?usp=drive_link))
+![AWS EC2 Instances](https://github.com/DatNguyenPT/Netflix-Clone-DevSecOps-Pipeline/blob/master/Screenshot%202025-02-13%20201310.png?raw=true)
 
-![Pipeline](https://drive.google.com/file/d/18RNkiu7-j6KMEbYpqazzEeLCJ4Kx8H2A/view?usp=sharing)
+![Pipeline](https://github.com/DatNguyenPT/Netflix-Clone-DevSecOps-Pipeline/blob/master/Screenshot%202025-02-13%20201342.png?raw=true)
 
-![DP-Check](https://drive.google.com/file/d/1iqpt-0o7J_XW_X8vpKO4hBbm5J6rsBZ4/view?usp=drive_link)
+![DP-Check](https://github.com/DatNguyenPT/Netflix-Clone-DevSecOps-Pipeline/blob/master/Screenshot%202025-02-13%20201423.png?raw=true)
 
-![Sonarqube](https://drive.google.com/file/d/1ZI8-KgZ0xYQHLDVAuZUuotQsxh5xHKKw/view?usp=sharing) 
+![Sonarqube](https://github.com/DatNguyenPT/Netflix-Clone-DevSecOps-Pipeline/blob/master/Screenshot%202025-02-13%20201445.png?raw=true) 
 
-![Issues](https://drive.google.com/file/d/13-rI39tZdmavVGcwu_XE7TxL5TAlbe1-/view?usp=sharing) 
+![Issues](https://github.com/DatNguyenPT/Netflix-Clone-DevSecOps-Pipeline/blob/master/Screenshot%202025-02-13%20201500.png?raw=true) 
 
-![Security Hotspots](https://drive.google.com/file/d/1buGUvNQEooRha434tD0ITytTqDCjQGpi/view?usp=sharing) 
+![Security Hotspots](https://github.com/DatNguyenPT/Netflix-Clone-DevSecOps-Pipeline/blob/master/Screenshot%202025-02-13%20201513.png?raw=true) 
 
-![DataDog](https://drive.google.com/file/d/19W4boS41u4y8MBpzY0sk84pURi5uVBjY/view?usp=sharing)
+![DataDog](https://github.com/DatNguyenPT/Netflix-Clone-DevSecOps-Pipeline/blob/master/Screenshot%202025-02-13%20201527.png?raw=true)
 
-![Grafana](https://drive.google.com/file/d/1CSolazSxrycYUC0A7Q9RzN5_qJlz_f9c/view?usp=sharing)
+![Grafana](https://github.com/DatNguyenPT/Netflix-Clone-DevSecOps-Pipeline/blob/master/Screenshot%202025-02-13%20201543.png?raw=true)
 
-![Result](https://drive.google.com/file/d/1d0WP6VKCTSsBeyMMiYfNm2KVmrGDgtmt/view?usp=sharing)
+![Result](https://github.com/DatNguyenPT/Netflix-Clone-DevSecOps-Pipeline/blob/master/Screenshot%202025-02-13%20201617.png?raw=true)
 
 
 
