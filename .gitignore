@@ -3,6 +3,7 @@ AWS Infra/*.tfstate
 AWS Infra/*.tfstate.backup
 AWS Infra/.terraform/
 AWS Infra/.terraform.lock.hcl
+AWS Infra/*.pem
 
 # Ignore variable files that may contain sensitive data
 AWS Infra/*.tfvars
